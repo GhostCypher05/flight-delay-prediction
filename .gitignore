@@ -13,3 +13,6 @@ __pycache__/
 
 #Enviroment Variables
 .env
+
+# Trained model artifacts
+models/
