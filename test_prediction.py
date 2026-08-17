@@ -3,6 +3,7 @@ import pandas as pd
 from src.prediction import predict_delay
 
 
+# Example flight
 flight = pd.DataFrame([{
     "AIRLINE": "DL",
     "ORIGIN_AIRPORT": "ATL",
@@ -15,11 +16,27 @@ flight = pd.DataFrame([{
 }])
 
 
+# Generate prediction
 probability, prediction = predict_delay(flight)
 
+
+# Display results
+print("=" * 50)
+print("       FLIGHT DELAY PREDICTION SYSTEM")
+print("=" * 50)
+
+print("\nFlight details:")
+print("Airline: Delta (DL)")
+print("Route: ATL → LAX")
+print("Scheduled departure: 14:30")
+print("Scheduled flight time: 210 minutes")
+
+print("\nPrediction:")
 print(f"Delay probability: {probability:.2%}")
 
 if prediction == 1:
-    print("Prediction: DELAY LIKELY")
+    print("Decision: DELAY LIKELY")
 else:
-    print("Prediction: ON-TIME LIKELY")
+    print("Decision: ON-TIME LIKELY")
+
+print("=" * 50)
